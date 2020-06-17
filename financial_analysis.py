@@ -41,9 +41,9 @@ def settingPanel():
     Entry(settingPanel, textvariable = dstPath).grid(row = 1, column = 1)
     Button(settingPanel,bg = 'lightblue',text = "选择", command = dstselectPath).grid(row = 1, column = 2)
     
-    Button(settingPanel,bg = 'lightblue',text = "保存", command = saveinifile()).grid(row = 2, column = 1)
-    Button(settingPanel,bg = 'lightblue',text = "关闭", command = settingPanel.destroy).grid(row = 2, column = 2)
-
+ #   Button(settingPanel,bg = 'lightblue',text = "保存", command = saveinifile()).grid(row = 2, column = 1)
+ #   Button(settingPanel,bg = 'lightblue',text = "关闭", command = settingPanel.destroy).grid(row = 2, column = 2)
+    Button(settingPanel,bg = 'lightblue',text = "保存", command = lambda:[saveinifile(),settingPanel.destroy()] ).grid(row = 2, column = 1)
 def saveinifile():
     """生成目标文件和原目录的字典"""
     """如果没有设定，则程序直接从filepath.ini文件中读取路径进行操作"""
